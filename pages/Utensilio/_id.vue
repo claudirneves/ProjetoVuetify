@@ -56,6 +56,11 @@
             :items="utensilios"
             :items-per-page="5"
             class="elevation-1"
+            :footer-props="{
+            showFirstLastPage: true,
+            pageText: '{0}-{1} de {2}' ,
+            'items-per-page-text':'Linhas por Página'
+      }"
       
          >
          <template v-slot:[`item.actions`]="{ item }">
@@ -115,13 +120,11 @@ import UtensilioService from '~/service/UtensilioService'
           {
             text: 'Descrição',
             align: 'start',
-            sortable: false,
             value: 'descricao',
           },
           {
             text:'Disponível',
             align: 'start',
-            sortable: false,
             value: 'disponivel',
           },
           {
@@ -163,8 +166,8 @@ import UtensilioService from '~/service/UtensilioService'
         });
       },
       edit(row){
-        this.$router.push('/utensilio/'+row.id);
-        console.log('passou aqui'+ row.id);
+        this.$router.push('/utensilio/'+ row.id);
+        this.utensilioList();
       },
       
      async del(row){

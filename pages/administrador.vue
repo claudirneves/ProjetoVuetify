@@ -1,21 +1,6 @@
 <template>
    <div>
-    <NuxtLink to="/utensilio">Ir para Utensilio</NuxtLink>
-
-     <v-row
-    align="center"
-    justify="space-around"
-  >
-    
-    <v-btn
-      depressed
-      color="primary"
-      v-on:click="utensilio()"
-    >
-      Utensilios
-    </v-btn>
-  </v-row>
-       
+    <NuxtLink to="/utensilio">Ir para Utensilio</NuxtLink>      
     </div>
     
 </template>
